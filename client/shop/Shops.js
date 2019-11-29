@@ -13,8 +13,8 @@ const styles = theme => ({
     maxWidth: 600,
     margin: 'auto',
     padding: theme.spacing.unit * 3,
-    marginTop: theme.spacing.unit * 5,
-    marginBottom: theme.spacing.unit * 3
+    marginTop: theme.spacing.unit * 10,
+    marginBottom: theme.spacing.unit * 14
   }),
   title: {
     margin: `${theme.spacing.unit * 3}px 0 ${theme.spacing.unit * 2}px`,
@@ -27,7 +27,13 @@ const styles = theme => ({
     height: 100
   },
   subheading: {
-    color: theme.palette.text.secondary
+    color: theme.palette.text.secondary,
+      fontSize: '14px',
+      textOverflow: 'ellipsis',
+      overflow: 'hidden',
+      height: '40px',
+      maxWidth: '430px'
+  
   },
   shopTitle: {
     fontSize: '1.2em',
