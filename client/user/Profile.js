@@ -112,3 +112,5 @@ Profile.propTypes = {
 }
 
 export default withStyles(styles)(Profile)
+
+
