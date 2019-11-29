@@ -11,6 +11,7 @@ import authRoutes from './routes/auth.routes'
 import shopRoutes from './routes/shop.routes'
 import productRoutes from './routes/product.routes'
 import orderRoutes from './routes/order.routes'
+import contactUsRoutes from './routes/contactUs.routes'
 
 // modules for server side rendering
 import React from 'react'
@@ -51,21 +52,22 @@ app.use('/', authRoutes)
 app.use('/', shopRoutes)
 app.use('/', productRoutes)
 app.use('/', orderRoutes)
+app.use('/', contactUsRoutes)
 
 app.get('*', (req, res) => {
    const sheetsRegistry = new SheetsRegistry()
    const theme = createMuiTheme({
      palette: {
        primary: {
-       light: '#8eacbb',
-       main: '#607d8b',
-       dark: '#34515e',
+       light: '#21d192',
+       main: '#1cb77f',
+       dark: '#1cb77f',
        contrastText: '#fff',
      },
      secondary: {
-       light: '#e7ff8c',
-       main: '#b2ff59',
-       dark: '#7ecb20',
+        light: '#21d192',
+        main: '#1cb77f',
+        dark: '#1cb77f',
        contrastText: '#000',
      },
        openTitle: blueGrey['400'],
