@@ -5,6 +5,7 @@ import Typography from 'material-ui/Typography'
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList'
 import {Link} from 'react-router-dom'
 import AddToCart from './../cart/AddToCart'
+import withWidth from 'material-ui/utils/withWidth'
 
 const styles = theme => ({
   root: {
@@ -49,12 +50,13 @@ const styles = theme => ({
 })
 class Products extends Component {
   render() {
-    const {classes} = this.props
+    const {classes, width} = this.props
+    let columns = width === 'sm' || width === 'md'  ? 2 : 3;
     return (
       <div className={classes.root}>
       {this.props.products.length > 0 ?
         (<div className={classes.container}>
-          <GridList cellHeight={200} className={classes.gridList} cols={3}>
+          <GridList cellHeight={200} className={classes.gridList} cols ={columns} >
           {this.props.products.map((product, i) => (
             <GridListTile key={i} className={classes.tile}>
               <Link to={"/product/"+product._id}><img className={classes.image} src={'/api/product/image/'+product._id} alt={product.name} /></Link>
@@ -77,4 +79,4 @@ Products.propTypes = {
   searched: PropTypes.bool.isRequired
 }
 
-export default withStyles(styles)(Products)
+export default withStyles(styles)(withWidth()((Products)))
