@@ -32,6 +32,25 @@ const styles = theme => ({
   },
   leftIcon: {
     marginRight: "8px"
+  },
+  heading:{
+    color: '#607d8b',
+    fontWeight: '500',
+    margin: '0',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
+
+  },
+  description: {
+    color: 'rgba(0, 0, 0, 0.54)',
+    fontSize: '14px',
+    fontWeight: '400',
+    lineHeight: '1.5',
+    margin: '0',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    textOverflow: 'ellipsis',
+    overflow: 'hidden',
+    maxWidth: '310px',
+    whiteSpace: 'nowrap'
   }
 })
 class MyShops extends Component {
@@ -87,7 +106,11 @@ class MyShops extends Component {
                 <ListItemAvatar>
                   <Avatar src={'/api/shops/logo/'+shop._id+"?" + new Date().getTime()}/>
                 </ListItemAvatar>
-                <ListItemText primary={shop.name} secondary={shop.description}/>
+                <div>
+                  <h4 className={classes.heading}>{shop.name}</h4>
+                  <p className={classes.description}>{shop.description}</p>
+                </div>
+                
                 { auth.isAuthenticated().user && auth.isAuthenticated().user._id == shop.owner._id &&
                   (<ListItemSecondaryAction>
                     <Link to={"/seller/orders/" + shop.name+ '/'+shop._id}>
