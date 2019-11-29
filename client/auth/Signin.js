@@ -12,10 +12,11 @@ import {signin} from './api-auth.js'
 
 const styles = theme => ({
   card: {
-    maxWidth: 600,
+    maxWidth: 500,
     margin: 'auto',
     textAlign: 'center',
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 10,
+    marginBottom: theme.spacing.unit * 14,
     paddingBottom: theme.spacing.unit * 2
   },
   error: {
