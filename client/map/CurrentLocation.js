@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 
 const mapStyles = {
   map: {
-    position: 'absolute',
+    position: 'relative',
     width: '100%',
-    height: '100%'
+    height: '100vh',
+    marginBottom: 'calc(100% - (105% + 60px))'
   }
 };
 
