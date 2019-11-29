@@ -13,10 +13,11 @@ import {Link} from 'react-router-dom'
 
 const styles = theme => ({
   card: {
-    maxWidth: 600,
+    maxWidth: 500,
     margin: 'auto',
     textAlign: 'center',
-    marginTop: theme.spacing.unit * 5,
+    marginTop: theme.spacing.unit * 10,
+    marginBottom: theme.spacing.unit * 14,
     paddingBottom: theme.spacing.unit * 2
   },
   error: {
@@ -118,9 +119,9 @@ class Signup extends Component {
             New account successfully created.
           </DialogContentText>
         </DialogContent>
-        <DialogActions>
+        <DialogActions  style={{justifyContent: 'center'}}>
           <Link to="/signin">
-            <Button color="primary" autoFocus="autoFocus" variant="raised">
+            <Button color="secondary" autoFocus="autoFocus" variant="raised" style={{margin: "0px auto 18px"}}>
               Sign In
             </Button>
           </Link>
