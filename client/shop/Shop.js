@@ -12,7 +12,8 @@ import {listByShop} from './../product/api-product.js'
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    margin: 30,
+    padding: '0 30px',
+    marginTop: 'calc(1.5% + 60px)',
   },
   card: {
     textAlign: 'center',
