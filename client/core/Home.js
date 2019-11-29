@@ -6,11 +6,13 @@ import Suggestions from './../product/Suggestions'
 import {listLatest, listCategories} from './../product/api-product.js'
 import Search from './../product/Search'
 import Categories from './../product/Categories'
+import Banner from './Banner'
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     margin: 30,
+    
   }
 })
 
@@ -39,16 +41,19 @@ class Home extends Component {
   render() {
     const {classes} = this.props
     return (
-      <div className={classes.root}>
-        <Grid container spacing={24}>
-          <Grid item xs={8} sm={8}>
-            <Search categories={this.state.categories}/>
-            <Categories categories={this.state.categories}/>
+      <div className={classes.content}>
+        <Banner />
+        <div className={classes.root}>
+          <Grid container spacing={24} justify="center" >
+            <Grid item sm={12} md={8} lg={8}>
+              <Search categories={this.state.categories}/>
+              <Categories categories={this.state.categories}/>
+            </Grid>
+            <Grid item sm={12} md={8} lg={4}>
+              <Suggestions products={this.state.suggestions} title={this.state.suggestionTitle}/>
+            </Grid>
           </Grid>
-          <Grid item xs={4} sm={4}>
-            <Suggestions products={this.state.suggestions} title={this.state.suggestionTitle}/>
-          </Grid>
-        </Grid>
+        </div>
       </div>
     )
   }
