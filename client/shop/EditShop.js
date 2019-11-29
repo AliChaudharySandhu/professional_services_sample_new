@@ -135,7 +135,7 @@ class EditShop extends Component {
                 id="multiline-flexible"
                 label="Description"
                 multiline
-                rows="3"
+                
                 value={this.state.description}
                 onChange={this.handleChange('description')}
                 className={classes.textField}
