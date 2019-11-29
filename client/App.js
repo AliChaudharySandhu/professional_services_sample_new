@@ -7,6 +7,9 @@ import { hot } from 'react-hot-loader'
 
 // Create a theme instance.
 const theme = createMuiTheme({
+  root:{
+    position: 'relative',
+  },
   palette: {
     primary: {
     light: '#8eacbb',
@@ -15,16 +18,19 @@ const theme = createMuiTheme({
     contrastText: '#fff',
   },
   secondary: {
-    light: '#e7ff8c',
-    main: '#b2ff59',
-    dark: '#7ecb20',
-    contrastText: '#000',
+    light: '#21d192',
+       main: '#21d192',
+       dark: '#1cb77f',
+    contrastText: '#fff',
   },
     openTitle: blueGrey['400'],
     protectedTitle: lightGreen['400'],
     type: 'light'
-  }
-})
+  },
+
+}
+  
+)
 
 const App = () => (
   <BrowserRouter>
